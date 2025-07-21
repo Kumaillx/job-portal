@@ -63,3 +63,31 @@
   background-color: #004ecc;
 }
 
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  gap: 1.5rem;
+}
+
+.logoImage {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+  margin-top: 5px;
+  display: flex;
+}
+
+.logoImage:hover 
+{
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    filter: brightness(1.1);
+    cursor: pointer;
+
+
+}
+

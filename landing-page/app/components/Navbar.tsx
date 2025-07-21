@@ -4,6 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../../styles/Navbar.module.css';
 import logo from '@/app/images/logo.png';
+import slide1 from '@/app/images/Nav-slide1.png';
+import slide2 from '@/app/images/Nav-slide2.png';
+import slide3 from '@/app/images/Nav-slide3.png';
 
  function Navbar() {
   return (
@@ -32,10 +35,15 @@ import logo from '@/app/images/logo.png';
 
       </div>
       
-      <div className="Breadcrumbs" style={{ fontSize:'-webkit-xxx-large' ,textAlign: 'left', marginTop: '30px' }}>
-        Your Trusted Partner for Custom Web &amp; App Development
+      <div style={{ fontSize:'-webkit-xxx-large' ,textAlign: 'center', marginTop: '30px' }}>
+        Explore career opportunities at Ultra Codes 
       </div>
-        
+
+      <div className={styles.logoWrapper}>
+        <Image className={styles.logoImage} src={slide1} alt="UltraCodes Logo" />
+        <Image className={styles.logoImage} src={slide2} alt="UltraCodes Logo" />
+        <Image className={styles.logoImage} src={slide3} alt="UltraCodes Logo" />
+      </div>  
       
     
     </header>
