@@ -2,11 +2,29 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 import styles from '../../styles/Navbar.module.css';
 import logo from '@/app/images/logo.png';
-import slide3 from '@/app/images/Nav-slide3.png'; // Using only slide3 as per the image
 
 function Navbar() {
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files && event.target.files[0]) {
+      setSelectedFile(event.target.files[0]);
+    }
+  };
+
+  const handleUpload = () => {
+    if (selectedFile) {
+      // Placeholder for upload logic (e.g., API call)
+      console.log('Uploading file:', selectedFile.name);
+      // Add your upload logic here (e.g., using fetch or axios to send to a server)
+    } else {
+      alert('Please select a file first!');
+    }
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -31,9 +49,27 @@ function Navbar() {
       </div>
       <div className={styles.careerSection}>
         <h1 className={styles.careerTitle}>EXPLORE CAREER OPPORTUNITIES</h1>
-        {/* <div className={styles.imageContainer}>
-          <Image src={slide3} alt="Leadership Presentation" width={800} height={400} />
-        </div> */}
+        <div className={styles.uploadSection}>
+          <label className={styles.uploadLabel}>
+            Upload Your CV
+            <input
+              type="file"
+              accept=".pdf,.doc,.docx"
+              onChange={handleFileChange}
+              className={styles.uploadInput}
+            />
+          </label>
+          <button
+            onClick={handleUpload}
+            className={styles.uploadButton}
+            disabled={!selectedFile}
+          >
+            Search in Jobs
+          </button>
+          {selectedFile && (
+            <p className={styles.fileName}>Selected file: {selectedFile.name}</p>
+          )}
+        </div>
         <p className={styles.welcomeText}>Welcome to the Ultra Codes Job Portal</p>
       </div>
     </header>
