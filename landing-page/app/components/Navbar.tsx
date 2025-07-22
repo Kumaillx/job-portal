@@ -4,17 +4,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../../styles/Navbar.module.css';
 import logo from '@/app/images/logo.png';
-import slide1 from '@/app/images/Nav-slide1.png';
-import slide2 from '@/app/images/Nav-slide2.png';
-import slide3 from '@/app/images/Nav-slide3.png';
+import slide3 from '@/app/images/Nav-slide3.png'; // Using only slide3 as per the image
 
- function Navbar() {
+function Navbar() {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.logo}>
           <Link href="/">
-            <Image src={logo} alt="UltraCodes Logo" width={300} height={70} />
+            <Image src={logo} alt="UltraCodes Logo" width={150} height={40} />
           </Link>
         </div>
         <nav className={styles.nav}>
@@ -30,22 +28,14 @@ import slide3 from '@/app/images/Nav-slide3.png';
         <div className={styles.cta}>
           <Link href="/contact">Contact Us</Link>
         </div>
-
-        
-
       </div>
-      
-      <div style={{ fontSize:'-webkit-xxx-large' ,textAlign: 'center', marginTop: '30px' }}>
-        Explore career opportunities at Ultra Codes 
+      <div className={styles.careerSection}>
+        <h1 className={styles.careerTitle}>EXPLORE CAREER OPPORTUNITIES</h1>
+        {/* <div className={styles.imageContainer}>
+          <Image src={slide3} alt="Leadership Presentation" width={800} height={400} />
+        </div> */}
+        <p className={styles.welcomeText}>Welcome to the Ultra Codes Job Portal</p>
       </div>
-
-      <div className={styles.logoWrapper}>
-        <Image className={styles.logoImage} src={slide1} alt="UltraCodes Logo" />
-        <Image className={styles.logoImage} src={slide2} alt="UltraCodes Logo" />
-        <Image className={styles.logoImage} src={slide3} alt="UltraCodes Logo" />
-      </div>  
-      
-    
     </header>
   );
 }
