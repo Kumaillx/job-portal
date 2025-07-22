@@ -12,7 +12,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #07457e;
+  background: linear-gradient(115deg, #062b54 30%, #1254a0);
   padding: 20px;
   color: white;
   flex-wrap: wrap;

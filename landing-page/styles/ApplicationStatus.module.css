@@ -1,14 +1,14 @@
 .statusSection {
   margin-top: 60px;
   padding: 40px;
-  background-color: #f5f5f5;
+    background: linear-gradient(115deg, #062b54 30%, #1254a0);
   border-radius: 12px;
 }
 
 .statusSection h2 {
   margin-bottom: 30px;
   font-size: 2rem;
-  color: #333;
+  color: white;
 }
 
 .statusList {
@@ -20,14 +20,30 @@
 .statusCard {
   padding: 20px;
   border-radius: 10px;
-  background: linear-gradient(115deg, #062b54 30%, #1254a0);
+  background: white;
   border-left: 6px solid #02d1ff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.statusCard:hover {
+  background: linear-gradient(90deg, #09d0fd 50%, #e0f2fe 50%);
+    background-size: 200% 100%;
+    width: 100%;
+    background-position: right bottom;
+    color: #000; 
+    transition: all 2s ease;
+    box-shadow: none;
+
+    font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  display:inline-block;
+  text-align: center;
 }
 
 .statusCard h3 {
   margin: 0 0 10px 0;
   font-size: 1.2rem;
+  color: black;
 }
 
 .status {

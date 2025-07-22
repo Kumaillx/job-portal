@@ -28,11 +28,16 @@ export default function ApplicationStatus() {
     <section className={styles.statusSection}>
       <h2>Application Status</h2>
       <div className={styles.statusList}>
+        
         {mockApplications.map((app, index) => (
           <div key={index} className={styles.statusCard}>
             <h3>{app.jobTitle} - {app.company}</h3>
-            <p>Applied on: {app.appliedOn}</p>
-            <p>Status: <span className={`${styles.status} ${styles[app.status.replace(/\s+/g, '').toLowerCase()]}`}>{app.status}</span></p>
+            <p
+            style={{color: 'black'}}
+            >Applied on: {app.appliedOn}</p>
+            <p
+            style={{color: 'black'}}
+            >Status: <span className={`${styles.status} ${styles[app.status.replace(/\s+/g, '').toLowerCase()]}`}>{app.status}</span></p>
           </div>
         ))}
       </div>
