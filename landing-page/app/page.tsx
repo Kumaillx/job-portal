@@ -2,6 +2,7 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import AppStatus from "@/app/components/ApplicationStatus";
+import Footer from "@/app/components/Footer";
 import styles from '@/styles/LandingPage.module.css';
 import Image from 'next/image';
 import himg from '@/app/images/Hero-img.png';
@@ -47,6 +48,10 @@ export default function Home() {
         </section>
 
         <AppStatus />
+        <div className={styles.footerContainer}>
+          <Footer />
+        </div>
+        
       </main>
     </>
   );
