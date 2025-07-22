@@ -1,13 +1,13 @@
 'use client';
 import React from 'react';
 import Navbar from './components/Navbar';
+import AppStatus from "@/app/components/ApplicationStatus";
 import styles from '@/styles/LandingPage.module.css';
 import Image from 'next/image';
 import himg from '@/app/images/Hero-img.png';
 import fdev from "@/app/images/F-dev.png";
 import bdev from "@/app/images/B-dev.png";
 import UI from "@/app/images/UI.png";
-
 
 export default function Home() {
   return (
@@ -22,7 +22,6 @@ export default function Home() {
           </div>
           <div className={styles.heroImage}>
             <Image src={himg} alt="Job Search" width={400} height={300} />
-        
           </div>
         </section>
 
@@ -31,7 +30,6 @@ export default function Home() {
           <div className={styles.jobCards}>
             <div className={styles.jobCard}>
               <Image src={fdev} alt="Frontend Developer" />
-              
               <h3>Frontend Developer</h3>
               <p>React | Next.js | TypeScript</p>
             </div>
@@ -48,15 +46,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={styles.featuredCompanies}>
-          <h2>Top Hiring Companies</h2>
-          <div className={styles.companiesGrid}>
-            <img src="/images/google.png" alt="Google" />
-            <img src="/images/microsoft.png" alt="Microsoft" />
-            <img src="/images/amazon.png" alt="Amazon" />
-            <img src="/images/meta.png" alt="Meta" />
-          </div>
-        </section>
+        <AppStatus />
       </main>
     </>
   );

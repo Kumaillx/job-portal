@@ -1,8 +1,8 @@
 .header {
-  background-color: #1f508b;
+  background: linear-gradient(115deg, #062b54 30%, #1254a0);
   padding: 1rem 2rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  position: sticky;
+  position: relative;
   top: 0;
   z-index: 1000;
   border-radius: 20px;
@@ -109,12 +109,12 @@
 }
 
 .uploadLabel {
-    background: linear-gradient(90deg, #1f508b 50%, #e0f2fe 50%);
+    background: linear-gradient(90deg, #09d0fd 50%, #e0f2fe 50%);
     background-size: 200% 100%;
     width: 800px;
   height: 40px;
     background-position: right bottom;
-    color: #000; /* default text color */
+    color: #000; 
     transition: all 2s ease;
     box-shadow: none;
     border-radius: 30px;
@@ -123,7 +123,7 @@
   display:inline-block;
   text-align: center;
   padding-top: 8px;
-  border: #5cc0fa 2px solid;
+  border: #09d0fd 2px solid;
 }
 
 .uploadLabel:hover {
@@ -132,23 +132,6 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-
-
-/* .uploadLabel {
-  font-size: 1.1rem;
-  
-  background: linear-gradient(90deg, #ffffff, #ffffff);
-  
-  color: black;
-  
-}
-
-.uploadLabel:hover
-{
-    background: linear-gradient(90deg, #e0f2fe, #e0f2fe);
-    color: #02d1ff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-} */
 
 
 

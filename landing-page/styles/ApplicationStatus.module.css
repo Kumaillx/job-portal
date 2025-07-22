@@ -1,0 +1,47 @@
+.statusSection {
+  margin-top: 60px;
+  padding: 40px;
+  background-color: #f5f5f5;
+  border-radius: 12px;
+}
+
+.statusSection h2 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #333;
+}
+
+.statusList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.statusCard {
+  padding: 20px;
+  border-radius: 10px;
+  background: linear-gradient(115deg, #062b54 30%, #1254a0);
+  border-left: 6px solid #02d1ff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.statusCard h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+}
+
+.status {
+  font-weight: bold;
+}
+
+.underreview {
+  color: #0070f3;
+}
+
+.interviewscheduled {
+  color: #ffa500;
+}
+
+.rejected {
+  color: #e00;
+}
