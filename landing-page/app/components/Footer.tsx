@@ -1,14 +1,12 @@
 import React from 'react';
 import styles from '@/styles/Footer.module.css';
 
-
-
 function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.topSection}>
         <div className={styles.contactItem}>
-          
+        
           <span>info@ultracodes.io</span>
         </div>
         <div className={styles.contactItem}>
