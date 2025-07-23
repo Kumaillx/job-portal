@@ -24,6 +24,24 @@ const jobDescriptions: Record<string, { title: string; tech: string; Des: string
     Exp: '3+ years of experience in UI/UX design',
     Des: 'Join Ultra Codes as a UI/UX Designer!...',
   },
+  'business-developer': {
+    title: 'Business Developer',
+    tech: 'Business | Sales | Marketing',
+    Exp: '1+ years of experience in Business Development',
+    Des: 'Join Ultra Codes as a Business Developer!...',
+  },
+  'qa-testing': {
+    title: 'QA Testing Engineer',
+    tech: 'Selenium | JIRA | Test Automation',
+    Exp: '2+ years of experience in QA Testing',
+    Des: 'Join Ultra Codes as a QA Testing Engineer! We are seeking a detail-oriented professional to ensure top-quality software through testing and automation. Collaborate with our innovative team to deliver reliable solutions for clients. Requires 2+ years of experience, strong analytical skills, and knowledge of testing tools. Work remotely or onsite in a dynamic environment. Apply now at Ultra Codes Job Portal upload your CV today!',
+  },
+  'marketing': {
+    title: 'Marketing Specialist',
+    tech: 'Digital Marketing | SEO | Content Creation',
+    Exp: '2+ years of experience in Marketing',
+    Des: 'Join Ultra Codes as a Marketing Specialist! We are looking for a creative individual to drive brand awareness and lead generation through digital strategies. Collaborate with our innovative team to promote cutting-edge solutions. Requires 2+ years of experience, strong communication skills, and marketing expertise. Work remotely or onsite in a dynamic environment. Apply now at Ultra Codes Job Portal upload your CV today!',
+  },
 };
 
 export default function ApplyPage({ params }: { params: { role: string } }) {

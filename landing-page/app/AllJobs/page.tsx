@@ -22,21 +22,28 @@ function JobsPage() {
       <div className={styles.jobCards}>
         
         <div className={styles.jobCard}>
-            
+          <Link href="/apply/frontend-developer">
           <Image src={fdev} alt="Frontend Developer" />
           <h3>Frontend Developer</h3>
           <p>React | Next.js | TypeScript</p>
+          </Link>
         
         </div>
+
         <div className={styles.jobCard}>
+          <Link href="/apply/backend-developer">
           <Image src={bdev} alt="Backend Developer" />
           <h3>Backend Developer</h3>
           <p>Node.js | Express | SQL</p>
+          </Link>
         </div>
+
         <div className={styles.jobCard}>
+          <Link href="/apply/ui-ux-designer" >
           <Image src={UI} alt="UI/UX Designer" />
           <h3>UI/UX Designer</h3>
           <p>Figma | Adobe XD | Prototyping</p>
+          </Link>
         </div>
       </div>
 
@@ -46,20 +53,27 @@ function JobsPage() {
       </div>
 
       <div className={styles.jobCards}>
+        
         <div className={styles.jobCard}>
+          <Link href="/apply/business-developer" >
           <Image src={bd} alt="Business Developer" />
           <h3>Business Developer</h3>
           <p>Business | Sales | Marketing</p>
+          </Link>
         </div>
         <div className={styles.jobCard}>
+          <Link href="/apply/qa-testing" >
           <Image src={qa} alt="QA Tester" />
           <h3>QA Testing</h3>
-          <p>Auto Testing | Manual Testing | SQA</p>
+          <p>Selenium | Jira | Test Automation</p>
+          </Link>
         </div>
         <div className={styles.jobCard}>
+          <Link href="/apply/marketing" >
           <Image src={mk} alt="Marketing" />
           <h3>Marketing</h3>
-          <p>Social Media | Campaign | Ads</p>
+          <p>Marketing | SEO | Content Creation</p>
+          </Link>
         </div>
       </div>
 
