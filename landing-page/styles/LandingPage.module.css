@@ -96,3 +96,60 @@
   background-color: #f8f8f8;
   padding: 20px;
 }
+
+/* .buttonLink
+{
+  background-color: #02d1ff;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 8px;
+  color: white;
+  border: none;
+  font-size: 1rem;
+}
+
+.buttonLink:hover
+{
+  cursor: pointer;
+
+
+} */
+
+.button {
+  padding: 10px 20px;
+  background-color: #02d1ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+

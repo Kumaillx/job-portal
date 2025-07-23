@@ -10,25 +10,24 @@ const jobDescriptions: Record<string, { title: string; tech: string; Des: string
     title: 'Frontend Developer',
     tech: 'React | Next.js | TypeScript',
     Exp: '2+ years of experience in frontend development',
-    Des: 'Join Ultra Codes as a Frontend Developer! We are seeking a skilled professional to craft elegant, responsive web interfaces using HTML, CSS, and JavaScript (React preferred). Collaborate with our innovative team to deliver cutting-edge solutions for top-tier clients. Requires 3+ years of experience, strong problem-solving skills, and a passion for UI/UX. Work remotely or onsite in a dynamic environment. Apply now at Ultra Codes Job Portal upload your CV today!',
+    Des: 'Join Ultra Codes as a Frontend Developer!...',
   },
   'backend-developer': {
     title: 'Backend Developer',
     tech: 'Node.js | Express | SQL',
     Exp: '3+ years of experience in backend development',
-    Des: 'Join Ultra Codes as a Backend Developer! We’re looking for an expert to build robust, scalable server-side applications using Node.js, Python, or Java. Collaborate with our innovative team to deliver high-performance solutions for top clients. Requires 3+ years of experience, strong database skills (SQL/NoSQL), and API design expertise. Work remotely or onsite in a dynamic setting. Apply now at Ultra Codes Job Portal upload your CV today!',
+    Des: 'Join Ultra Codes as a Backend Developer!...',
   },
   'ui-ux-designer': {
     title: 'UI/UX Designer',
     tech: 'Figma | Adobe XD | Prototyping',
     Exp: '3+ years of experience in UI/UX design',
-    Des: 'Join Ultra Codes as a UI/UX Designer! We’re seeking a creative professional to design intuitive, visually stunning user interfaces using Figma, Adobe XD, or Sketch. Collaborate with our innovative team to enhance user experiences for top clients. Requires 3+ years of experience, strong prototyping skills, and a passion for user-centered design. Work remotely or onsite in a dynamic environment. Apply now at Ultra Codes Job Portal upload your CV today!',
+    Des: 'Join Ultra Codes as a UI/UX Designer!...',
   },
 };
 
 export default function ApplyPage({ params }: { params: { role: string } }) {
   const job = jobDescriptions[params.role];
-
   if (!job) return notFound();
 
   const [formData, setFormData] = useState({
@@ -48,6 +47,7 @@ export default function ApplyPage({ params }: { params: { role: string } }) {
     resume: null as File | null,
     coverLetter: '',
   });
+
   const [step, setStep] = useState(1);
   const [success, setSuccess] = useState(false);
 
@@ -62,11 +62,19 @@ export default function ApplyPage({ params }: { params: { role: string } }) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (formData.resume) {
-      // Simulate API call
       setTimeout(() => {
         console.log('Form Submitted:', formData);
-        setSuccess(true); // Trigger success animation
-      }, 1000); // Simulate 1-second delay for API response
+        setSuccess(true);
+      }, 1000);
+    }
+  };
+
+  const handleNextStep = () => {
+    const form = document.querySelector('form');
+    if (form && form.checkValidity()) {
+      setStep(2);
+    } else {
+      form?.reportValidity();
     }
   };
 
@@ -76,16 +84,20 @@ export default function ApplyPage({ params }: { params: { role: string } }) {
       <p className={styles.tech}><strong>Required Skills:</strong> {job.tech}</p>
       <p className={styles.tech}><strong>Experience:</strong> {job.Exp}</p>
       <p className={styles.tech}><strong>Description:</strong> {job.Des}</p>
+
       {!success && (
         <>
           <div className={styles.progressBar}>
             <div className={styles.progress} style={{ width: `${(step / 2) * 100}%` }} />
           </div>
+
           <form className={styles.form} onSubmit={handleSubmit}>
             {step === 1 && (
               <div className={styles.step}>
-                <div className={styles.step}></div>
-                <label className={styles.label} htmlFor="fullName">Full Name:</label>
+                {/* Name */}
+                <label className={styles.label} htmlFor="fullName">Full Name:
+                  <span className={styles.req}>*</span>
+                </label>
                 <input
                   className={styles.input}
                   type="text"
@@ -95,7 +107,10 @@ export default function ApplyPage({ params }: { params: { role: string } }) {
                   onChange={handleChange}
                   required
                 />
-                <label className={styles.label} htmlFor="phone">Phone Number:</label>
+
+                <label className={styles.label} htmlFor="phone">Phone Number:
+                  <span className={styles.req}>*</span>
+                </label>
                 <input
                   className={styles.input}
                   type="tel"
@@ -105,7 +120,10 @@ export default function ApplyPage({ params }: { params: { role: string } }) {
                   onChange={handleChange}
                   required
                 />
-                <label className={styles.label} htmlFor="email">Email Address:</label>
+
+                <label className={styles.label} htmlFor="email">Email Address:
+                  <span className={styles.req}>*</span>
+                </label>
                 <input
                   className={styles.input}
                   type="email"
@@ -115,17 +133,17 @@ export default function ApplyPage({ params }: { params: { role: string } }) {
                   onChange={handleChange}
                   required
                 />
-                
-                
+
                 <button
                   type="button"
                   className={styles.button}
-                  onClick={() => setStep(2)}
+                  onClick={handleNextStep}
                 >
                   Next
                 </button>
               </div>
             )}
+
             {step === 2 && (
               <div className={styles.step}>
                 <label className={styles.label} htmlFor="university">University:</label>
@@ -138,6 +156,7 @@ export default function ApplyPage({ params }: { params: { role: string } }) {
                   onChange={handleChange}
                   required
                 />
+
                 <label className={styles.label} htmlFor="graduationDate">Expected/Actual Graduation Date:</label>
                 <input
                   className={styles.input}
@@ -148,6 +167,7 @@ export default function ApplyPage({ params }: { params: { role: string } }) {
                   onChange={handleChange}
                   required
                 />
+
                 <label className={styles.label} htmlFor="degree">Degree:</label>
                 <input
                   className={styles.input}
@@ -158,6 +178,7 @@ export default function ApplyPage({ params }: { params: { role: string } }) {
                   onChange={handleChange}
                   required
                 />
+
                 <label className={styles.label} htmlFor="linkedin">LinkedIn Profile or Portfolio URL:</label>
                 <input
                   className={styles.input}
@@ -168,6 +189,7 @@ export default function ApplyPage({ params }: { params: { role: string } }) {
                   onChange={handleChange}
                   placeholder="https://linkedin.com/in/yourprofile"
                 />
+
                 <label className={styles.label} htmlFor="workExperience">Work Experience (Years):</label>
                 <input
                   className={styles.input}
@@ -178,6 +200,7 @@ export default function ApplyPage({ params }: { params: { role: string } }) {
                   onChange={handleChange}
                   min="0"
                 />
+
                 <label className={styles.label} htmlFor="skills">Skills:</label>
                 <input
                   className={styles.input}
@@ -188,6 +211,7 @@ export default function ApplyPage({ params }: { params: { role: string } }) {
                   onChange={handleChange}
                   placeholder="e.g., React, Node.js, Design"
                 />
+
                 <label className={styles.label} htmlFor="availability">Availability (Start Date):</label>
                 <input
                   className={styles.input}
@@ -197,6 +221,7 @@ export default function ApplyPage({ params }: { params: { role: string } }) {
                   value={formData.availability}
                   onChange={handleChange}
                 />
+
                 <label className={styles.label} htmlFor="preferredLocation">Preferred Location:</label>
                 <input
                   className={styles.input}
@@ -207,6 +232,7 @@ export default function ApplyPage({ params }: { params: { role: string } }) {
                   onChange={handleChange}
                   placeholder="e.g., Remote, New York"
                 />
+
                 <label className={styles.label} htmlFor="salaryExpectation">Salary Expectation (Annual):</label>
                 <input
                   className={styles.input}
@@ -217,6 +243,7 @@ export default function ApplyPage({ params }: { params: { role: string } }) {
                   onChange={handleChange}
                   min="0"
                 />
+
                 <label className={styles.label} htmlFor="references">References (Optional):</label>
                 <textarea
                   className={styles.textarea}
@@ -227,6 +254,7 @@ export default function ApplyPage({ params }: { params: { role: string } }) {
                   rows={3}
                   placeholder="Name, Title, Contact"
                 />
+
                 <label className={styles.label} htmlFor="resume">Upload Resume (PDF/DOC):</label>
                 <input
                   className={styles.input}
@@ -237,6 +265,7 @@ export default function ApplyPage({ params }: { params: { role: string } }) {
                   onChange={handleFileChange}
                   required
                 />
+
                 <label className={styles.label} htmlFor="coverLetter">Cover Letter:</label>
                 <textarea
                   className={styles.textarea}
@@ -247,6 +276,7 @@ export default function ApplyPage({ params }: { params: { role: string } }) {
                   rows={5}
                   placeholder="Optional"
                 />
+
                 <div className={styles.buttonGroup}>
                   <button
                     type="button"
@@ -264,6 +294,7 @@ export default function ApplyPage({ params }: { params: { role: string } }) {
           </form>
         </>
       )}
+
       {success && (
         <div className={styles.successContainer}>
           <div className={styles.successAnimation}>
@@ -274,7 +305,6 @@ export default function ApplyPage({ params }: { params: { role: string } }) {
               height={150}
               className={styles.successLogo}
             />
-            
           </div>
           <div className={styles.checkmark}>✓</div>
           <p className={styles.successMessage}>Application Submitted Successfully!</p>

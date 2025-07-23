@@ -237,3 +237,9 @@
     font-size: 1.2rem;
   }
 }
+
+.req
+{
+  color: red;
+  margin-left: 1%;
+}

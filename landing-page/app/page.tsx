@@ -9,7 +9,7 @@ import himg from '@/app/images/Hero-img.png';
 import fdev from "@/app/images/F-dev.png";
 import bdev from "@/app/images/B-dev.png";
 import UI from "@/app/images/UI.png";
- import Link from 'next/link';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -20,7 +20,15 @@ export default function Home() {
           <div className={styles.heroText}>
             <h1>Your Dream Job Awaits</h1>
             <p>Find jobs that match your skills and passion.</p>
-            <button className={styles.ctaButton}>Browse Jobs</button>
+            <button className={styles.button}>
+              <span>
+<Link   
+      href="/AllJobs" >
+          Browse Jobs
+        </Link>
+
+  </span>
+              </button>
           </div>
           <div className={styles.heroImage}>
             <Image src={himg} alt="Job Search" width={400} height={300} />
@@ -52,11 +60,18 @@ export default function Home() {
         </section>
        
 
-        <Link 
-        style={{ textDecoration: 'none', color: 'black' }}
-        href="/AllJobs" className={styles.buttonLink}>
+        <button className={styles.button}>
+  <span>
+<Link   
+      href="/AllJobs" >
           View All Jobs
         </Link>
+
+  </span>
+          
+        </button>
+
+        
 
         <AppStatus />
         <div className={styles.footerContainer}>
