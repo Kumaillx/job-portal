@@ -1,0 +1,12 @@
+/* styles.module.css */
+.buttonLink {
+  padding: 10px 20px;
+  background-color: #07457e;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.buttonLink:hover {
+  background-color: #052f59;
+}

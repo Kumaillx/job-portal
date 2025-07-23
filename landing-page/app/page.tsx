@@ -9,6 +9,7 @@ import himg from '@/app/images/Hero-img.png';
 import fdev from "@/app/images/F-dev.png";
 import bdev from "@/app/images/B-dev.png";
 import UI from "@/app/images/UI.png";
+ import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -28,24 +29,34 @@ export default function Home() {
 
         <section className={styles.availableJobs}>
           <h2>Available Jobs</h2>
-          <div className={styles.jobCards}>
-            <div className={styles.jobCard}>
-              <Image src={fdev} alt="Frontend Developer" />
-              <h3>Frontend Developer</h3>
-              <p>React | Next.js | TypeScript</p>
-            </div>
-            <div className={styles.jobCard}>
-              <Image src={bdev} alt="Backend Developer" />
-              <h3>Backend Developer</h3>
-              <p>Node.js | Express | SQL</p>
-            </div>
-            <div className={styles.jobCard}>
-              <Image src={UI} alt="UI/UX Designer" />
-              <h3>UI/UX Designer</h3>
-              <p>Figma | Adobe XD | Prototyping</p>
-            </div>
-          </div>
+            <div className={styles.jobCards}>
+          <Link href="/apply/frontend-developer" className={styles.jobCard}>
+            <Image src={fdev} alt="Frontend Developer" />
+            <h3>Frontend Developer</h3>
+            <p>React | Next.js | TypeScript</p>
+          </Link>
+
+          <Link href="/apply/backend-developer" className={styles.jobCard}>
+          <Image src={bdev} alt="Backend Developer" />
+          <h3>Backend Developer</h3>
+          <p>Node.js | Express | SQL</p>
+          </Link>
+
+          <Link href="/apply/ui-ux-designer" className={styles.jobCard}>
+            <Image src={UI} alt="UI/UX Designer" />
+            <h3>UI/UX Designer</h3>
+            <p>Figma | Adobe XD | Prototyping</p>
+          </Link>
+        </div>
+          
         </section>
+       
+
+        <Link 
+        style={{ textDecoration: 'none', color: 'black' }}
+        href="/AllJobs" className={styles.buttonLink}>
+          View All Jobs
+        </Link>
 
         <AppStatus />
         <div className={styles.footerContainer}>
