@@ -10,6 +10,7 @@ import fdev from "@/app/images/F-dev.png";
 import bdev from "@/app/images/B-dev.png";
 import UI from "@/app/images/UI.png";
 import Link from 'next/link';
+import Dropdown from '@/app/components/Dropdown';
 
 export default function Home() {
   return (
@@ -20,6 +21,13 @@ export default function Home() {
           <div className={styles.heroText}>
             <h1>Your Dream Job Awaits</h1>
             <p>Find jobs that match your skills and passion.</p>
+            
+          <div>
+            <Dropdown/>
+          </div>
+          
+
+            
             <button className={styles.button}>
               <span>
 <Link   
