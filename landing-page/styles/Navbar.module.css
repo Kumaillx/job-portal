@@ -20,6 +20,7 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin: 20px auto;
 }
 
 .logo a {
@@ -29,6 +30,8 @@
   font-weight: 600;
   color: #ffffff;
   text-decoration: none;
+  height: auto;
+  width: 12rem;
 }
 
 .logo img {

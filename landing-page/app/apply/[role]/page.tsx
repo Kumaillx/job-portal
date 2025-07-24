@@ -47,7 +47,7 @@ const jobDescriptions: Record<string, { title: string; tech: string; Des: string
   },
 };
 
-export default function ApplyPage({ params }: { params: { role: string } }) {
+ function ApplyPage({ params }: { params: { role: string } }) {
   const job = jobDescriptions[params.role];
   if (!job) return notFound();
 
@@ -259,7 +259,7 @@ export default function ApplyPage({ params }: { params: { role: string } }) {
                   placeholder="e.g., Remote, New York"
                 />
 
-                <label className={styles.label} htmlFor="salaryExpectation">Salary Expectation (Annual):</label>
+                <label className={styles.label} htmlFor="salaryExpectation">Salary Expectation (Monthly):</label>
                 <input
                   className={styles.input}
                   type="number"
@@ -351,3 +351,5 @@ export default function ApplyPage({ params }: { params: { role: string } }) {
     </div>
   );
 }
+
+export default ApplyPage;
