@@ -1,3 +1,4 @@
+
 .container {
   max-width: 900px;
   margin: 2rem auto;
@@ -174,14 +175,13 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-top: 14.6rem;
+
   transform: translate(-50%, -50%);
-  font-size: 4rem;
+  font-size: 3rem;
   color: #22c55e;
   opacity: 0;
   animation: checkmarkFadeIn 0.5s ease-out 0.5s forwards;
-  /* padding: 2px; */
-  /* background-color: red; */
+  margin-top: -49px;
 
   
 
@@ -242,4 +242,87 @@
 {
   color: red;
   margin-left: 1%;
+}
+
+
+
+.statusContainer {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+  position: relative; /* For absolute positioning of cross if needed */
+}
+
+.actions {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.backLink {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.backLink:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.cross {
+  font-size: 1.5rem;
+  color: #ef4444; /* Red color for cross */
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+  margin-top: 6px;
+}
+
+.cross:hover {
+  transform: scale(1.2); /* Slight scale on hover for interactivity */
+  color: #dc2626; /* Darker red on hover */
+}
+
+
+
+@media (max-width: 480px) {
+  .container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .input {
+    padding: 0.6rem;
+  }
+
+  .button {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .statusTitle {
+    font-size: 1.5rem;
+  }
+
+  .status {
+    font-size: 1rem;
+  }
+
+  .cross {
+    font-size: 1.2rem; /* Adjust for mobile */
+  }
 }

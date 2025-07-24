@@ -4,6 +4,9 @@ import { notFound } from 'next/navigation';
 import { useState } from 'react';
 import Image from 'next/image';
 import logo from '@/app/images/logo.png';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+
 
 const jobDescriptions: Record<string, { title: string; tech: string; Des: string; Exp: string }> = {
   'frontend-developer': {
@@ -68,6 +71,7 @@ export default function ApplyPage({ params }: { params: { role: string } }) {
 
   const [step, setStep] = useState(1);
   const [success, setSuccess] = useState(false);
+  const router = useRouter();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -94,6 +98,10 @@ export default function ApplyPage({ params }: { params: { role: string } }) {
     } else {
       form?.reportValidity();
     }
+  };
+
+  const handleGoHome = () => {
+    router.push('/'); // Navigate to homepage
   };
 
   return (
@@ -324,10 +332,22 @@ export default function ApplyPage({ params }: { params: { role: string } }) {
               className={styles.successLogo}
             />
           </div>
-          <div className={styles.checkmark}>✓</div>
+          
           <p className={styles.successMessage}>Application Submitted Successfully!</p>
+              <div className={styles.checkmark}>✓</div>
+              <div className={styles.actions}>
+            <Link href="/AllJobs" className={styles.backLink}>
+              Back to Jobs
+            </Link>
+            <span className={styles.cross} onClick={handleGoHome}>
+              ❌
+            </span>
+          </div>
         </div>
+
+
       )}
+
     </div>
   );
 }
