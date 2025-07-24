@@ -1,5 +1,5 @@
 .availableJobs {
-  padding: 4rem 2rem;
+  padding: 1rem 1rem;
   background: linear-gradient(135deg, #f0f4f8, #ffffff);
   min-height: calc(100vh - 200px); /* Adjust based on Navbar and Footer height */
   display: flex;

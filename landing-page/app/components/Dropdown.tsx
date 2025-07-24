@@ -8,10 +8,10 @@ interface Option {
 }
 
 const options: Option[] = [
-  { value: '', label: 'Software Development' },
-  { value: 'option1', label: 'Business & Sales Development' },
-  { value: 'option2', label: 'PR and Marketing' },
-  { value: 'option3', label: 'QA' },
+  { value: 'SD', label: 'Software Development' },
+  { value: 'BD', label: 'Business & Sales Development' },
+  { value: 'MR', label: 'PR and Marketing' },
+  { value: 'QA', label: 'QA' },
 ];
 
 const Dropdown: React.FC = () => {
