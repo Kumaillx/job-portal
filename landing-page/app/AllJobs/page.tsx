@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image';
 import fdev from '@/app/images/F-dev.png';
 import bdev from '@/app/images/B-dev.png';
@@ -10,6 +11,8 @@ import qa from '@/app/images/QA.png';
 import mk from '@/app/images/Marketing.png';
 import Link from 'next/link';
 import type { StaticImageData } from 'next/image';
+import { useEffect, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 interface JobCard {
   id : number;
@@ -73,6 +76,7 @@ const jobCards: JobCard[] = [
 
 const JobList: React.FC<{ cards: JobCard[] }> = ({ cards }) => {
   return (
+
     <div className={styles.jobList}>
       {cards.map((job, index) => (
         <div key={index} className={styles.jobCard}>
@@ -88,14 +92,76 @@ const JobList: React.FC<{ cards: JobCard[] }> = ({ cards }) => {
 };
 
 function JobsPage() {
+  const searchParams = useSearchParams();
+  const keywordQuery = searchParams.get('keywords'); 
+
+  const [filteredJobs, setFilteredJobs] = useState<JobCard[]>([]);
+
+  useEffect(() => {
+    if (keywordQuery) {
+      const keywords = keywordQuery.toLowerCase().split(',');
+
+      
+      const devKeywords = 
+      [
+        'software', 
+        'react', 
+        'django', 
+        'python',
+        'web', 
+        'developer', 
+        'fullstack', 
+        'mern', 
+        'mean'
+      ];
+
+      // Filter jobCards based on matching keywords
+      const matchedJobs = jobCards.filter(job => 
+      {
+        if (job.title.toLowerCase().includes('frontend') || job.title.toLowerCase().includes('backend')) 
+        {
+          return keywords.some(k => devKeywords.includes(k));
+        } 
+        
+        else if (job.title.toLowerCase().includes('ui')) 
+        {
+          return keywords.includes('designer') || keywords.includes('ui') || keywords.includes('figma');
+        } 
+        
+        else if (job.title.toLowerCase().includes('qa')) 
+        {
+          return keywords.includes('qa') || keywords.includes('testing');
+        } 
+        
+        else if (job.title.toLowerCase().includes('business')) 
+        {
+          return keywords.includes('sales') || keywords.includes('business');
+        } 
+        
+        else if (job.title.toLowerCase().includes('marketing')) 
+        {
+          return keywords.includes('marketing') || keywords.includes('content');
+        }
+        
+        return false;
+      });
+
+      setFilteredJobs(matchedJobs);
+    } 
+    
+    else {
+      setFilteredJobs(jobCards); 
+    }
+  }, [keywordQuery]);
+
   return (
     <section className={styles.availableJobs}>
       <Navbar />
       <h2 className={styles.jobTitle}>Available Jobs</h2>
-      <JobList cards={jobCards} />
+      <JobList cards={filteredJobs} />
       <div className={styles.footerContainer}>
-          <Footer />
-        </div>
+        <Footer />
+      </div>
     </section>
   );
 }

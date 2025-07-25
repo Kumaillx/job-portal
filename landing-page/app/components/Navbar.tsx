@@ -18,18 +18,13 @@ function Navbar() {
 
 const handleUpload = () => {
   if (selectedFile) {
-    console.log('Uploading file:', selectedFile.name);
-    console.log('Using keywords for search:', keywords);
-
-    // Navigate to /AllJobs page after upload
-    router.push('/AllJobs');
-  
-  }
-
-  else {
+    const query = keywords.join(','); // Convert array to comma-separated string
+    router.push(`/AllJobs?keywords=${query}`); // Pass as query param
+  } else {
     alert('Please select a file first!');
   }
 };
+
 
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
