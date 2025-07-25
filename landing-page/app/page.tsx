@@ -11,6 +11,7 @@ import bdev from "@/app/images/B-dev.png";
 import UI from "@/app/images/UI.png";
 import Link from 'next/link';
 import Dropdown from '@/app/components/Dropdown';
+import { useSearchParams } from 'next/navigation'
 
 export default function Home() {
   return (
@@ -26,14 +27,12 @@ export default function Home() {
             <Dropdown/>
           </div>
           
-
-            
             <button className={styles.button}>
               <span>
-<Link   
+      <Link   
       href="/AllJobs" >
-          Browse Jobs
-        </Link>
+        Browse Jobs
+      </Link>
 
   </span>
               </button>
@@ -66,7 +65,6 @@ export default function Home() {
         </div>
           
         </section>
-       
 
         <button className={styles.button}>
   <span>
@@ -78,14 +76,10 @@ export default function Home() {
   </span>
           
         </button>
-
-        
-
         <AppStatus />
         <div className={styles.footerContainer}>
           <Footer />
-        </div>
-        
+        </div>        
       </main>
     </>
   );

@@ -65,7 +65,7 @@
 }
 
 .jobCard:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
@@ -73,6 +73,11 @@
 .jobCard img {
     width: 250px;
     height: auto;
+    transition: transform 0.3s ease;
+}
+
+.jobCard:hover img {
+  transform: scale(1.05);
 }
 
 .featuredCompanies .companiesGrid {

@@ -12,6 +12,7 @@ import Link from 'next/link';
 import type { StaticImageData } from 'next/image';
 
 interface JobCard {
+  id : number;
   href: string;
   imageSrc: StaticImageData;
   altText: string;
@@ -21,6 +22,7 @@ interface JobCard {
 
 const jobCards: JobCard[] = [
   {
+    id : 1,
     href: '/apply/frontend-developer',
     imageSrc: fdev,
     altText: 'Frontend Developer',
@@ -28,6 +30,7 @@ const jobCards: JobCard[] = [
     description: 'React | Next.js | TypeScript',
   },
   {
+    id : 2,
     href: '/apply/backend-developer',
     imageSrc: bdev,
     altText: 'Backend Developer',
@@ -35,6 +38,15 @@ const jobCards: JobCard[] = [
     description: 'Node.js | Express.js | MongoDB',
   },
   {
+    id : 3,
+    href: '/apply/ui-ux-designer',
+    imageSrc: UI,
+    altText: 'UI/UX Designer',
+    title: 'UI/UX Designer',
+    description: 'Figma | Web Design | UI',  
+  },
+  {
+    id : 4,
     href: '/apply/business-developer',
     imageSrc: bd,
     altText: 'Business Developer',
@@ -42,6 +54,7 @@ const jobCards: JobCard[] = [
     description: 'Business | Sales | Revenue',
   },
   {
+    id : 5,
     href: '/apply/qa-testing',
     imageSrc: qa,
     altText: 'QA Engineer',
@@ -49,6 +62,7 @@ const jobCards: JobCard[] = [
     description: 'Jira | Selenium | Auto Testing',
   },
   {
+    id : 6,
     href: '/apply/marketing',
     imageSrc: mk,
     altText: 'Marketing',

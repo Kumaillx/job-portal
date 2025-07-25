@@ -12,6 +12,7 @@ const options: Option[] = [
   { value: 'BD', label: 'Business & Sales Development' },
   { value: 'MR', label: 'PR and Marketing' },
   { value: 'QA', label: 'QA' },
+  { value: 'Others' , label: 'Others'}
 ];
 
 const Dropdown: React.FC = () => {
