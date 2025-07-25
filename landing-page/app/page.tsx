@@ -78,6 +78,7 @@ export default function Home() {
           
         </button>
         <AppStatus />
+        
         <div className={styles.footerContainer}>
           <Footer />
         </div>        

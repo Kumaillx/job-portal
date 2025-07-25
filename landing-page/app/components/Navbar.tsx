@@ -1,16 +1,18 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+
 import styles from '../../styles/Navbar.module.css';
 import logo from '@/app/images/logo.png';
 import { useRouter } from 'next/navigation';
-
+import { useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 
 function Navbar() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [keywords, setKeywords] = useState<string[]>([]);
+  const searchParams = useSearchParams();
   const router = useRouter(); 
 
 

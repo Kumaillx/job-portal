@@ -93,7 +93,9 @@ function JobsPage() {
       <Navbar />
       <h2 className={styles.jobTitle}>Available Jobs</h2>
       <JobList cards={jobCards} />
-      <Footer />
+      <div className={styles.footerContainer}>
+          <Footer />
+        </div>
     </section>
   );
 }
