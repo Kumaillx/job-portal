@@ -26,22 +26,23 @@ export default function Home() {
           <div>
             <Dropdown/>
           </div>
-          
-            <button className={styles.button}>
-              <span>
-      <Link   
-      href="/AllJobs" >
-        Browse Jobs
-      </Link>
-
-  </span>
-              </button>
+      {/* The Browse Button */}
+        <button className={styles.button}>
+          <span>
+            <Link   
+              href="/AllJobs" >
+                Browse Jobs
+            </Link>
+          </span>
+        </button>
           </div>
+      {/* Your Dream Job Section */}
           <div className={styles.heroImage}>
             <Image src={himg} alt="Job Search" width={400} height={300} />
           </div>
         </section>
 
+{/* Available Jobs Section */}
         <section className={styles.availableJobs}>
           <h2>Available Jobs</h2>
             <div className={styles.jobCards}>

@@ -1,28 +1,62 @@
 'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import styles from '../../styles/Navbar.module.css';
 import logo from '@/app/images/logo.png';
+import { useRouter } from 'next/navigation';
+
+
 
 function Navbar() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [keywords, setKeywords] = useState<string[]>([]);
+  const router = useRouter(); 
+
+
+const handleUpload = () => {
+  if (selectedFile) {
+    console.log('Uploading file:', selectedFile.name);
+    console.log('Using keywords for search:', keywords);
+
+    // Navigate to /AllJobs page after upload
+    router.push('/AllJobs');
+  
+  }
+
+  else {
+    alert('Please select a file first!');
+  }
+};
+
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    // Check if a file is selected
+
     if (event.target.files && event.target.files[0]) {
-      setSelectedFile(event.target.files[0]);
+      const file = event.target.files[0];
+      setSelectedFile(file); // Set the selected file in state
+
+      const fileNameWithoutExtension = file.name.replace(/\.[^/.]+$/, '');
+      const rawWords = fileNameWithoutExtension
+        .split(/[\s_\-]+/) // split by space, underscore, or dash
+        .map(word => word.trim().toLowerCase()); // normalize the text
+      const stopwords = ['cv', 'resume', 'final', 'file', 'my', 'copy', 'document'];
+      const filteredKeywords = rawWords.filter(word => word && !stopwords.includes(word));
+
+      // Save the extracted keywords
+      setKeywords(filteredKeywords);
+
+      // Log to console (for developer debugging)
+      console.log('Extracted keywords:', filteredKeywords);
     }
   };
+  
+  const handleNavigation = ( ) => 
+  {
 
-  const handleUpload = () => {
-    if (selectedFile) {
-      // Placeholder for upload logic (e.g., API call)
-      console.log('Uploading file:', selectedFile.name);
-      // Add your upload logic here (e.g., using fetch or axios to send to a server)
-    } else {
-      alert('Please select a file first!');
-    }
+      
+
   };
 
   return (
@@ -60,6 +94,7 @@ function Navbar() {
               className={styles.uploadInput}
             />
           </label>
+
           <button
             onClick={handleUpload}
             className={styles.uploadButton}
