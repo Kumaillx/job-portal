@@ -6,21 +6,21 @@ const mockApplications = [
   {
     id: '123',
     jobTitle: 'Frontend Developer',
-    company: 'Google',
-    appliedOn: 'July 10, 2025',
+    University: 'ITU',
+    appliedOn: 'July 20, 2025',
     status: 'Under Review',
   },
   {
     id: '456',
     jobTitle: 'UI/UX Designer',
-    company: 'Meta',
-    appliedOn: 'July 1, 2025',
+    University: 'PU',
+    appliedOn: 'July 21, 2025',
     status: 'Rejected',
   },
   {
     id: '123',
     jobTitle: 'Backend Developer',
-    company: 'Amazon',
+    University: 'ITU',
     appliedOn: 'July 15, 2025',
     status: 'Interview Scheduled',
   },
@@ -83,7 +83,7 @@ export default function ApplicationStatus() {
           {filteredApplications.map((app, index) => (
             <div key={index} className={styles.statusCard}>
               <h3>
-                {app.jobTitle} - {app.company}
+                {app.jobTitle} - {app.University}
               </h3>
               <p style={{ color: 'black' }}>
                 Applied on: {app.appliedOn}
