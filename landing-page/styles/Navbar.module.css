@@ -9,7 +9,7 @@
   margin: 20px 40px;
   overflow: hidden;
   font-family: 'Poppins', sans-serif;
-  opacity: .9;
+
   height: auto;
 }
 
@@ -24,7 +24,7 @@
   background-size: 100px;
   background-position: center;
   z-index: -1;
-  opacity: .5;
+  opacity: .4;
 }
 
 .container {

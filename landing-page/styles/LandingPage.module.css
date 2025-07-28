@@ -9,12 +9,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(115deg, #062b54 30%, #1254a0);
+
   padding: 50px;
   border-radius: 12px;
   margin-bottom: 50px;
   flex-wrap: wrap;
+  
+  background: linear-gradient(115deg, #062b54 30%, #1254a0);
+  
 }
+
+
 
 .heroText {
   flex: 1 1 300px;

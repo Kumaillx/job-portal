@@ -17,7 +17,10 @@ export default function Home() {
   return (
     <>
       <Navbar />
+
+
       <main className={styles.main}>
+{/* Your Dream Job Section */}
         <section className={styles.hero}>
           <div className={styles.heroText}>
             <h1>Your Dream Job Awaits</h1>
@@ -36,10 +39,11 @@ export default function Home() {
           </span>
         </button>
           </div>
-      {/* Your Dream Job Section */}
+
           <div className={styles.heroImage}>
             <Image src={himg} alt="Job Search" width={400} height={300} />
           </div>
+          
         </section>
 
 {/* Available Jobs Section */}
