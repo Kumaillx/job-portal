@@ -52,16 +52,10 @@ const handleUpload = () => {
 
   return (
 
-
-    <header 
-    
+    <section>
+    <header     
     className={styles.header}>
-
-      {/* <div>
-        <Image src={Img} alt="UltraCodes Logo" width={150} height={40} />
-      </div> */}
-
-      <div className={styles.container}>
+    <div className={styles.container}>
         <div className={styles.logo}>
           <Link href="/">
             <Image src={logo} alt="UltraCodes Logo" width={150} height={40} />
@@ -108,6 +102,7 @@ const handleUpload = () => {
         <p className={styles.welcomeText}>Welcome to the Ultra Codes Job Portal</p>
       </div>
     </header>
+    </section>
   );
 }
 
