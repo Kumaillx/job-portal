@@ -7,7 +7,7 @@ import logo from '@/app/images/logo.png';
 import { useRouter } from 'next/navigation';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
-
+import Img from "@/app/images/Div-back.svg";
 
 function Navbar() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -49,16 +49,18 @@ const handleUpload = () => {
     }
   };
   
-  const handleNavigation = ( ) => 
-  {
-
-      
-
-  };
 
   return (
+
+
     <header 
+    
     className={styles.header}>
+
+      {/* <div>
+        <Image src={Img} alt="UltraCodes Logo" width={150} height={40} />
+      </div> */}
+
       <div className={styles.container}>
         <div className={styles.logo}>
           <Link href="/">
